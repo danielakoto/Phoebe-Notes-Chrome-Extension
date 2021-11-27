@@ -1,1 +1,1 @@
-# PhoebeNotes-Extension
+# Phoebe-Notes-Chrome-Extension
