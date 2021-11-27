@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/ios/100/000000/notepad.png">
+    <title>Phoebe Notes</title>
+    
+</head>
+    <body>
+        <div class="circle"></div>
+        <br>
+        <center>  
+        <section id="section" >
+             
+            <div>
+                <a href= "https://algo-5b306.web.app" target="_blank">
+                    <img src="/public/img/icons8-moon-48.png" alt="">
+                </a>
+            </div>
+
+            <input class="thetitle" type="text" id="thetitle" placeholder="Title" required>
+            <textarea class="thenote" type="text" id="thenote" placeholder="Note..." required></textarea>
+            <button id="createThing" class="btn btn-success">+</button>
+
+            <ul id="thingsList" style="display: grid; grid-template-columns: repeat(auto-fill, 200px); max-width: 450px; justify-content: center;">
+            </ul>
+            
+            <button id="clear">clear</button>
+        </section>
+        </center><script src="app.js"></script>
+    </body>
+</html>

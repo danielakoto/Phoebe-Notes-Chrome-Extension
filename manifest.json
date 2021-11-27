@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Phoebe Notes",
+    "description": "Take notes locally using Phoebe Extension.",
+    "version": "1.0",
+    "icons": {
+        "16": "/public/img/icons8-moon-16.png",
+        "48": "/public/img/icons8-moon-48.png",
+        "128": "/public/img/icons8-moon-100.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+
+        "js": ["/public/app.js"]
+    }],
+    "browser_action": {
+        "default_popup": "/public/index.html",
+        "default_title": "Phoebe Notes",
+        "default_icon": {
+            "16": "/public/img/icons8-moon-16.png",
+            "48": "/public/img/icons8-moon-48.png",
+            "128": "/public/img/icons8-moon-100.png"
+        }
+    }
+}

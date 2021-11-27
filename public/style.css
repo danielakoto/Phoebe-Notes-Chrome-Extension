@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    display: flexbox;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 500px; /* your desired width */
+    max-width: 50%;
+    min-height: 600px;
+    max-height: 50%;
+    vertical-align:middle;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 20px;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.336);
+    font-family: 'Times New Roman', Times, serif; 
+    border: solid rgb(124, 124, 124) 0.5px; 
+    display: inline-table;
+    margin: 1px;
+}
+
+#vtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    margin: 0;
+}
+#vvalue {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.themic {
+    width: 20px;
+    margin-bottom: 3px;
+}
+
+.thetitle, .thenote {
+    margin: 0; 
+    border: none;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    color: black;
+}
+.thetitle {
+    width: 300px;
+    height: 35px;
+    font-weight: bold;
+}
+.thenote {
+    width: 300px;
+}
+
+.thetitle:hover, .thenote:hover {
+    color: black;
+}
+.thetitle:active, .thenote:active {
+    border: none;
+}
+
+#createThing {
+    margin-bottom: 1px; 
+    height: 40px; 
+    width: 300px;
+    background-color: lightcoral;
+    border: solid lightcoral 1px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: white;
+}
+#createThing:hover {
+    font-size: 22px;
+    cursor: pointer;
+    background-color: rgb(252, 147, 147);
+}
+#createThing:active {
+    border: none;
+}
+#clear {
+    background-color: white;
+    color: rgb(95, 95, 95); 
+    border-radius: 5px; 
+    border-color: rgba(240, 128, 128, 0.178);
+    font-size: 14px;
+}
+
+.circle {
+    z-index: -1;
+    position: fixed;
+    background-color: rgba(94, 255, 188, 0.13);
+    padding: 240px;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.logo {
+    position: absolute;
+    top: 3%;
+    left: 90%;
+    width: 60px;
+    height: 60px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
