@@ -49,12 +49,18 @@ function allStorage() {
                 note: n
             }
             notes.push(note);
-            thingsList.innerHTML += `<li style="padding:10px; border-radius:5px;">
+            thingsList.innerHTML += `<li style="padding:10px; border-radius:5px; align-text:left;">
                                         <p id="vtitle">${t}</p>
-                                        <p id="vvalue">${n}</p>
+                                        <p id="vvalue" style="text-align:left;">${n}</p>
+                                        <p class="del" onclick="del(${i}" id="${tm}">x</p>
                                     </li>`
         }
     }
+}
+
+function del(i) {
+    notes.splice(index,i);
+    localStorage.setItem('NotesList', JSON.stringify(NotesList))
 }
 
 allStorage()
