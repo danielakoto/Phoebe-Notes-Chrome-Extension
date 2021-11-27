@@ -15,8 +15,9 @@ clear.onclick = () => {
 createThing.onclick = () => {
     let thetitle = document.getElementById('thetitle');
     let thenote = document.getElementById('thenote');
+    let tm = Date.now();
     let note = {
-        time: Date.now(),
+        time: tm,
         title: document.getElementById('thetitle').value,
         note: document.getElementById('thenote').value
     }
@@ -28,6 +29,7 @@ createThing.onclick = () => {
     thingsList.innerHTML += `<li style="padding:10px; border-radius:5px;">
                                 <p id="vtitle">${t}</p>
                                 <p id="vvalue">${n}</p>
+                                
                             </li>`
             
     localStorage.setItem('NotesList', JSON.stringify(notes));
@@ -52,15 +54,11 @@ function allStorage() {
             thingsList.innerHTML += `<li style="padding:10px; border-radius:5px; align-text:left;">
                                         <p id="vtitle">${t}</p>
                                         <p id="vvalue" style="text-align:left;">${n}</p>
-                                        <p class="del" onclick="del(${i}" id="${tm}">x</p>
+                                        
                                     </li>`
         }
     }
 }
 
-function del(i) {
-    notes.splice(index,i);
-    localStorage.setItem('NotesList', JSON.stringify(NotesList))
-}
 
 allStorage()
