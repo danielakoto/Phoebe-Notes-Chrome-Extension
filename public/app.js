@@ -28,7 +28,7 @@ createThing.onclick = () => {
     let n = document.getElementById('thenote').value;
     thingsList.innerHTML += `<li style="padding:10px; border-radius:5px;">
                                 <p id="vtitle">${t}</p>
-                                <p id="vvalue">${n}</p>
+                                <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
                                 
                             </li>`
             
@@ -53,8 +53,7 @@ function allStorage() {
             notes.push(note);
             thingsList.innerHTML += `<li style="padding:10px; border-radius:5px; align-text:left;">
                                         <p id="vtitle">${t}</p>
-                                        <p id="vvalue" style="text-align:left;">${n}</p>
-                                        
+                                        <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
                                     </li>`
         }
     }

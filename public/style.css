@@ -27,7 +27,7 @@ li {
     background-color: rgba(255, 255, 255, 0.336);
     font-family: 'Times New Roman', Times, serif; 
     border: solid rgb(124, 124, 124) 0.5px; 
-    display: inline-table;
+    display: inline-block;
     margin: 1px;
 }
 
@@ -56,6 +56,8 @@ h4 {
 p {
     font-family: 'Times New Roman', Times, serif;
     color: black;
+    word-break: break-all;
+    white-space: normal;
 }
 a {
     text-decoration: none;
