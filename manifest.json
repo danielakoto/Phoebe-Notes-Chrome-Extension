@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Phoebe Notes",
     "description": "Take notes locally using Phoebe Extension.",
-    "version": "1.0",
+    "version": "1.0.1",
     "icons": {
         "16": "/public/img/icons8-moon-16.png",
         "48": "/public/img/icons8-moon-48.png",

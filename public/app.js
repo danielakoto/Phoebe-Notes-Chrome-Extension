@@ -15,6 +15,10 @@ clear.onclick = () => {
 createThing.onclick = () => {
     let thetitle = document.getElementById('thetitle');
     let thenote = document.getElementById('thenote');
+    if(thetitle.value.length == 0 && thenote.value.length == 0) {
+        alert("No note written.");
+        return;
+    }
     let tm = Date.now();
     let note = {
         time: tm,
