@@ -8,11 +8,6 @@
         "48": "/public/img/icons8-moon-48.png",
         "128": "/public/img/icons8-moon-100.png"
     },
-    "content_scripts": [{
-        "matches": ["<all_urls>"],
-
-        "js": ["/public/app.js"]
-    }],
     "browser_action": {
         "default_popup": "/public/index.html",
         "default_title": "Phoebe Notes",
