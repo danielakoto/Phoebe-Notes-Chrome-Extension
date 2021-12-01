@@ -1,22 +1,27 @@
 const createThing = document.getElementById('createThing');
 const thingsList = document.getElementById('thingsList');
 const clear = document.getElementById('clear');
-
-let notes = [];
-
 const thenote = document.getElementById('thenote');
+let notes = [];
         
 clear.onclick = () => {
+    notes = [];
     console.log('clicked clear');
     localStorage.clear("NotesList");
     thingsList.innerHTML = "";
+    console.log(thingsList.innerHTML.length);
+    if(thingsList.innerHTML.length > 0) {
+        clear.style.display = 'inline-block';
+    } else {
+        clear.style.display = 'none';
+    }
 }
 
 createThing.onclick = () => {
     let thetitle = document.getElementById('thetitle');
     let thenote = document.getElementById('thenote');
     if(thetitle.value.length == 0 && thenote.value.length == 0) {
-        alert("No note written.");
+        alert("Empty note.");
         return;
     }
     let tm = Date.now();
@@ -27,18 +32,21 @@ createThing.onclick = () => {
     }
             
     notes.push(note);
-            
     let t = document.getElementById('thetitle').value;
     let n = document.getElementById('thenote').value;
     thingsList.innerHTML += `<li style="padding:10px; border-radius:5px;">
                                 <p id="vtitle">${t}</p>
                                 <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
-                                
                             </li>`
             
     localStorage.setItem('NotesList', JSON.stringify(notes));
     thetitle.value = "";
     thenote.value = "";
+    if(thingsList.innerHTML.length > 0) {
+        clear.style.display = 'inline-block';
+    } else {
+        clear.style.display = 'none';
+    }
 }
 
 function allStorage() {
@@ -61,7 +69,11 @@ function allStorage() {
                                     </li>`
         }
     }
+    if(thingsList.innerHTML.length > 0) {
+        clear.style.display = 'inline-block';
+    } else {
+        clear.style.display = 'none';
+    }
 }
-
 
 allStorage()

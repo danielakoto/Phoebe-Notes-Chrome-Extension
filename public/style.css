@@ -13,6 +13,7 @@ body {
     min-height: 600px;
     max-height: 50%;
     vertical-align:middle;
+    background-color: rgb(41, 41, 41);
 }
 
 ul {
@@ -100,38 +101,39 @@ a:hover {
     margin-bottom: 1px; 
     height: 40px; 
     width: 300px;
-    background-color: lightcoral;
-    border: solid lightcoral 1px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    background-color: rgba(40,0,70,254);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     color: white;
 }
 #createThing:hover {
     font-size: 22px;
     cursor: pointer;
-    background-color: rgb(252, 147, 147);
+    background-color: #f6ce6d;
 }
 #createThing:active {
     border: none;
 }
 #clear {
-    background-color: white;
-    color: rgb(95, 95, 95); 
+    background-color: #ef5a5b;
+    color: white; 
     border-radius: 5px; 
-    border-color: rgba(240, 128, 128, 0.178);
+    border-color: #e67373;
     font-size: 14px;
 }
 
 .circle {
     z-index: -1;
     position: fixed;
-    background-color: rgba(94, 255, 188, 0.13);
+    background-color: #ffdd8e;
     padding: 240px;
     margin: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 8%;
+    height: 65px;
+    width: 18px;
 }
 
 .logo {
