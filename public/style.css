@@ -1,7 +1,7 @@
 * {
     margin: 0;
     display: flexbox;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -25,40 +25,41 @@ ul {
 }
 
 li {
-    background-color: rgba(255, 255, 255, 0.336);
-    font-family: 'Times New Roman', Times, serif; 
-    border: solid rgb(124, 124, 124) 0.5px; 
+    background-color: rgba(255, 255, 255, 0.616);
+    font-family: Arial, Helvetica, sans-serif; 
+    border: solid rgba(124, 124, 124, 0.205) 0.5px; 
     display: inline-block;
     margin: 1px;
+    animation: fadeIn 800ms;
 }
 
 #vtitle {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 14px;
     text-align: center;
     margin: 0;
 }
 #vvalue {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    font-size: 16px;
+    font-size: 13px;
     text-align: center;
     margin: 0;
 }
 
 h4 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: none;
     color: black;
 }
 
 p {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     word-break: break-word;
-    white-space: normal;
+    white-space: pre-wrap;;
 }
 a {
     text-decoration: none;
@@ -77,17 +78,21 @@ a:hover {
     margin: 0; 
     border: none;
     font-size: 13px;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.774);
     color: black;
 }
 .thetitle {
+    margin-top: 55px;
     width: 300px;
     height: 35px;
     font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .thenote {
     width: 300px;
+    height: 120px;
 }
 
 .thetitle:hover, .thenote:hover {
@@ -100,40 +105,58 @@ a:hover {
 #createThing {
     margin-bottom: 1px; 
     height: 40px; 
-    width: 300px;
-    background-color: rgba(40,0,70,254);
+    width: 304px;
+    background-color: #ffcc53;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     color: white;
+    font-size: 20px;
+    border: solid 1px rgba(0, 0, 0, 0.089);
 }
 #createThing:hover {
-    font-size: 22px;
     cursor: pointer;
-    background-color: #f6ce6d;
+    animation: hover 300ms;
+
 }
-#createThing:active {
+
+#clear, #settings {
+    background-color: #ffffff60;
+    color: black; 
+    border-radius: 5px; 
+    border: solid 1px rgba(0, 0, 0, 0.192);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#settings {
+    width: 24px;
+    background-color: transparent;
     border: none;
 }
-#clear {
-    background-color: #ef5a5b;
-    color: white; 
-    border-radius: 5px; 
-    border-color: #e67373;
+
+#back {
+    background-color: #ffffff3a;
+    color: black;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.192);
     font-size: 14px;
+    margin-bottom: 5px;
+    padding: 3px;
 }
 
 .circle {
     z-index: -1;
     position: fixed;
-    background-color: #ffdd8e;
+    background-color: #fffaee;
     padding: 240px;
     margin: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 8%;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
     height: 65px;
-    width: 18px;
+    width: 22px;
 }
 
 .logo {
@@ -144,6 +167,11 @@ a:hover {
     height: 60px;
 }
 
+textarea {
+    white-space: pre-wrap;
+    resize: vertical;
+    }
+
 textarea::-webkit-scrollbar {
     width: 1em;
 }
@@ -153,3 +181,116 @@ textarea::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
 }
 
+a {
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.xbtn {
+    cursor: pointer;
+    margin-top: 5px;
+    width: 11px;
+    height: 11px;
+    float: left;
+    border: none;
+}
+.ebtn {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    float: right;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.colorbtn {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 100px;
+    margin: 0;
+}
+
+#red:hover {
+    background-color: #ff4747;
+    border: none;
+    width: 100px;
+}
+#blue:hover {
+    background-color: #5ed4ff;
+}
+#yellow:hover {
+    background-color: #ffcc53;
+}
+#green:hover {
+    background-color: #54ff6e;
+}
+#orange:hover {
+    background-color: #ff8f40;
+}
+#purple:hover {
+    background-color: #af59ff;
+}
+#dark:hover {
+    background-color: rgb(37, 37, 37);
+}
+#light:hover{
+    background-color: white;
+}
+
+.coloraddbtn {
+    background-color: rgba(255, 255, 255, 0.336);
+    border: none;
+    margin-top: 3px;
+    width: 20px;
+}
+
+.thebgcolor {
+    margin-top: 10px;
+    width: 200px;
+    border: solid 1px rgba(0, 0, 0, 0.192);
+}
+.thebtncolor {
+    width: 200px;
+    border: solid 1px rgba(0, 0, 0, 0.192);
+}
+
+#back {
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}
+
+#section {
+    animation: fadeIn 400ms;
+}
+
+.cbtn {
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+    position: absolute;
+    top: 12%;
+    left: 77%;
+    display: none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -7,32 +7,61 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/ios/100/000000/notepad.png">
     <title>Phoebe Notes</title>
-    
 </head>
     <body>
-        <div class="circle"></div>
-        <br>
-        <center>  
+        <div id="circle" class="circle"></div>
+        <center><a href="index.html"><h4 style="background-color: rgba(0, 0, 0, 0.815); color: white; padding-top: 10px; padding-bottom: 6px; font-size: 16px; width: 500px; margin-bottom: 5px; position: fixed;">Phoebe Notes</h4></a></center>
         <section id="section" >
-             
-            <div>
-                <a href= "https://algo-5b306.web.app" target="_blank">
-                    <img src="/public/img/phoebelogo48.png" alt="">
-                </a>
-            </div>
+            <center>
+                <input class="thetitle" type="text" id="thetitle" placeholder="Title" required>
+                <textarea class="thenote" type="text" id="thenote" placeholder="Note..." autocomplete="on" required></textarea>
+                <img src="img/icons8-close-50.png" id="cbtn" class="cbtn">
+                <button id="createThing" class="btn btn-success">+</button>
 
-            <input class="thetitle" type="text" id="thetitle" placeholder="Title" required>
-            <textarea class="thenote" type="text" id="thenote" placeholder="Note..." required></textarea>
-            <button id="createThing" class="btn btn-success">+</button>
-
-            <ul id="thingsList" style="display: grid; grid-template-columns: repeat(auto-fill, 210px); max-width: 440px; justify-content: center;">
+                <ul id="notesList" style="display: grid; grid-template-columns: repeat(auto-fill, 300px); max-width: 300px; justify-content: center;"></ul>
+                
+                <button id="clear" style="position: fixed; left: 5%; top: 92%;">clear</button>
+                <br>
+                <a id="settings" href="settings.html"  style="position: fixed; left: 92%; top: 93%;"><img src="img/icons8-settings-24.png" alt=""></a>
+                <br>
+                <br>
+            </center>
+            </section>
+        <div hidden>
+            <h4>Color Scheme</h4>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fill, 100px); max-width: 200px;">
+                <li>
+                    <button id="blue" class="colorbtn">blue</button>
+                </li>
+                <li>
+                    <button id="red" class="colorbtn">red</button>
+                </li>
+                <li>
+                    <button id="yellow" class="colorbtn">yellow</button>
+                </li>
+                <li>
+                    <button id="green" class="colorbtn">green</button>
+                </li>
+                <li>
+                    <button id="orange" class="colorbtn">orange</button>
+                </li>
+                <li>
+                    <button id="purple" class="colorbtn">purple</button>
+                </li>
+                <li>
+                    <button id="dark" class="colorbtn">dark</button>
+                </li>
+                <li>
+                    <button id="light" class="colorbtn">light</button>
+                </li>
             </ul>
-            
-            <button id="clear" style="display:none;">clear</button>
-            <br>
-            <br>
-        </section>
-        </center>
-        <script src="app.js"></script>
+        </div>
+        <div hidden>
+            <h4>Advanced Color Scheme</h4>
+            <input class="thebgcolor" type="text" id="thebgcolor" placeholder="background-color-hex" style="font-size: 10px; height: 15px;" required><br>
+            <input class="thebtncolor" type="text" id="thebtncolor" placeholder="button-color-hex" style="font-size: 10px; height: 15px;" required><br>
+            <button id="coloraddbtn" class="coloraddbtn">+</button>
+        </div>
+        <script defer src="app.js"></script>
     </body>
 </html>

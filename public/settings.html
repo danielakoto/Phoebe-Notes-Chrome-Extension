@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/ios/100/000000/notepad.png">
+    <title>Phoebe Notes</title>
+</head>
+    <body>
+        <div id="circle" class="circle"></div>
+        <center><a href="index.html"><h4 style="background-color: rgba(0, 0, 0, 0.815); color: white; padding-top: 10px; padding-bottom: 6px; font-size: 16px; width: 500px; margin-bottom: 5px; position: fixed;">Phoebe Notes</h4></a></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="section">
+            <center> 
+                <h4 class="stpage">Color Scheme</h4>
+                <ul style="display: grid; grid-template-columns: repeat(auto-fill, 100px); max-width: 200px;">
+                    <li>
+                        <button id="blue" class="colorbtn">blue</button>
+                    </li>
+                    <li>
+                        <button id="red" class="colorbtn">red</button>
+                    </li>
+                    <li>
+                        <button id="yellow" class="colorbtn">yellow</button>
+                    </li>
+                    <li>
+                        <button id="green" class="colorbtn">green</button>
+                    </li>
+                    <li>
+                        <button id="orange" class="colorbtn">orange</button>
+                    </li>
+                    <li>
+                        <button id="purple" class="colorbtn">purple</button>
+                    </li>
+                    <li>
+                        <button id="dark" class="colorbtn">dark</button>
+                    </li>
+                    <li>
+                        <button id="light" class="colorbtn">light</button>
+                    </li>
+                </ul>
+            <div>
+                <br>
+                <h4>Advanced Color Scheme</h4>
+                <input class="thebgcolor" type="text" id="thebgcolor" placeholder="background-color-hex" style="font-size: 10px; height: 15px;" required><br>
+                <input class="thebtncolor" type="text" id="thebtncolor" placeholder="button-color-hex" style="font-size: 10px; height: 15px;" required><br>
+                <button id="coloraddbtn" class="coloraddbtn">+</button>
+            </div>
+            <br>
+            <br>
+            <a id="back" href="index.html"><img id="back" src="img/icons8-left-48.png" alt=""></a>
+            <br>
+            <br>
+            <div hidden>
+                <input class="thetitle" type="text" id="thetitle" placeholder="Title" required>
+                <textarea class="thenote" type="text" id="thenote" placeholder="Note..." required></textarea>
+                <img src="img/icons8-close-50.png" id="cbtn" class="cbtn">
+                <button id="createThing" class="btn btn-success">+</button>
+
+                <ul id="notesList" style="display: grid; grid-template-columns: repeat(auto-fill, 300px); max-width: 300px; justify-content: center;">
+                </ul>
+                
+                <button id="clear" style="display:none;">clear</button>
+            </div>
+        </center>
+        </section>
+        <script defer src="app.js"></script>
+    </body>
+</html>
