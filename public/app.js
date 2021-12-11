@@ -279,7 +279,7 @@ dark.onclick = () => {
 const light = document.getElementById("light");
 light.onclick = () => {
     bgcolor = "#f2f2f2";
-    btncolor = "#9e9e9e";
+    btncolor = "#454545";
     changeColor();
 }
 
