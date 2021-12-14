@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Phoebe Notes",
     "description": "Take notes quickly and locally.",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "icons": {
         "16": "/public/img/phoebelogo16.png",
         "48": "/public/img/phoebelogo48.png",

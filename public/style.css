@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-width: 500px; /* your desired width */
+    min-width: 500px;
     max-width: 50%;
     min-height: 600px;
     max-height: 50%;
@@ -38,13 +38,14 @@ li {
     font-weight: bold;
     font-size: 14px;
     text-align: center;
-    margin: 0;
+    margin: 0 0 2% 0;
 }
 #vvalue {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-size: 13px;
     text-align: center;
+    line-height: 140%;
     margin: 0;
 }
 
@@ -119,7 +120,7 @@ a:hover {
     width: 24px;
     background-color: rgba(255, 255, 255, 0.205);
     border: none;
-    padding: 5px;
+    padding: 4px;
     border-radius: 20%;
 }
 
@@ -127,8 +128,6 @@ a:hover {
     background-color: white;
     cursor: pointer;
 }
-
-
 
 .circle {
     z-index: -1;
@@ -185,6 +184,9 @@ a:hover {
     height: 11px;
     float: left;
     border: none;
+    background-color: rgba(255, 255, 255, 0.205);
+    padding: 3px;
+    border-radius: 20%;
 }
 .ebtn {
     cursor: pointer;
@@ -192,6 +194,13 @@ a:hover {
     height: 14px;
     float: right;
     border: none;
+    background-color: rgba(255, 255, 255, 0.205);
+    padding: 3px;
+    border-radius: 20%;
+}
+
+.ebtn:hover, .xbtn:hover {
+    background-color: white;
 }
 
 button:hover {
@@ -271,6 +280,28 @@ button:hover {
     top: 12%;
     left: 81.5%;
     display: none;
+    background-color: rgba(255, 255, 255, 0.205);
+    padding: 2px;
+    border-radius: 20%;
+}
+.cbtn:hover {
+    background-color: white;
+}
+
+.closeExt {
+    z-index: 10;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5%;
+    left: 95%;
+    background-color: rgba(255, 255, 255, 0.267);
+    padding: 2px;
+    border-radius: 20%;
+}
+.closeExt:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 /* ANIMATIONS */

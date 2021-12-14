@@ -328,3 +328,9 @@ function changeColor() {
     localStorage.setItem("bgcolor", bgcolor)
     localStorage.setItem("btncolor", btncolor);
 }
+
+const closeExt = document.getElementById("closeExt");
+
+closeExt.onclick = () => {
+    window.close();
+}
