@@ -96,15 +96,12 @@ section.addEventListener("mousemove", async function() {
                 let thetitle = document.getElementById('thetitle');
                 let thenote = document.getElementById('thenote');
                 if(thetitle.value.length > 0 || thenote.value.length > 0) {
-                    if(confirm("Unsaved notes will be lost!") == false)
-                        return;
-                    else {
-                        thetitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
-                        thenote.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
-                        window.scrollTo(0, 0);
-                        del(i);
-                        return;
-                    }
+                    createThing.click();
+                    thetitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
+                    thenote.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
+                    window.scrollTo(0, 0);
+                    del(i);
+                    return;
                 } else {
                     thetitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
                     thenote.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
@@ -131,7 +128,7 @@ addEventListener("keyup", function() {
 })
 
 function rem(e){
-    if(confirm("Are you sure you want delete? Note will be permanently deleted!") == false)
+    if(confirm("Note will be permanently deleted!") == false)
         return;
     else {
         notes = JSON.parse(localStorage.getItem("NotesList"));
@@ -160,8 +157,8 @@ function allStorage() {
             let t = JSON.parse(localStorage.getItem('NotesList'))[i].title;
             let n = JSON.parse(localStorage.getItem('NotesList'))[i].note;
             notesList.innerHTML = notesList.innerHTML + `
-                                    <li class="${ind}" style="padding:10px; border-radius:5px; align-text:left;">
-                                    <a id="${i}">
+                                    <li class="card" style="padding:10px; border-radius:5px; align-text:left;">
+                                    <a id="${i}">    
                                         <p id="vtitle">${t}</p>
                                         <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
                                         <img src="img/icons8-edit-48.png" id="${i}" class="ebtn">
@@ -202,8 +199,8 @@ function allStorageNoClear() {
             let n = JSON.parse(localStorage.getItem('NotesList'))[i].note;
             let tm = JSON.parse(localStorage.getItem('NotesList'))[i].time;
             notesList.innerHTML = notesList.innerHTML + `          
-                                    <li class="${ind}" style="padding:10px; border-radius:5px; align-text:left;">
-                                    <a id="${i}">
+                                    <li class="card" style="padding:10px; border-radius:5px; align-text:left;">
+                                    <a id="${i}">    
                                         <p id="vtitle">${t}</p>
                                         <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
                                         <img src="img/icons8-edit-48.png" id="${i}" class="ebtn">
