@@ -159,8 +159,6 @@ a:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-bottom-left-radius: 3%;
-    border-bottom-right-radius: 3%;
     height: 68px;
     width: 22px;
 }

@@ -15,8 +15,8 @@ let loadCounter = 0;
 let notes = [];
 let ind = 0;
 //set colors
-let bgcolor = "#fffaee";
-let btncolor = "#ffcc53";
+let bgcolor = "#ffbb8a";
+let btncolor = "#ff8f40";
 
 //hide or show clear btn
 checkbtn();
