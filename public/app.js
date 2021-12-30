@@ -30,6 +30,15 @@ if(localStorage.getItem("btncolor") == null)
 circle.style.backgroundColor = localStorage.getItem("bgcolor");
 createThing.style.backgroundColor = localStorage.getItem("btncolor");
 
+//check local storage for recent title and note
+if(localStorage.getItem("title") == "") {
+    localStorage.setItem("title", null);
+}
+if(localStorage.getItem("note") == "") {
+    localStorage.setItem("note", null);
+}
+
+
 //clear notes array, local storage, list on page, and remove clear button temporarily
 clear.onclick = () => {
     if(confirm("Clear all notes?") == false)
@@ -49,8 +58,9 @@ cbtn.onclick = () => {
     else {
         thetitle.value = "";
         thenote.value = "";
-        localStorage.setItem("title", thenote.value);
-        localStorage.setItem("note", thenote.value);
+        localStorage.setItem("title", null);
+        localStorage.setItem("note", null);
+        cbtn.style.display = 'none';
     }
 }
 
@@ -175,7 +185,7 @@ function allStorage() {
         thetitle.value = JSON.parse(localStorage.getItem('title'));
     } else {
         const thetitle = document.getElementById('thetitle');
-        localStorage.removeItem("title")
+        localStorage.removeItem("title");
         thetitle.value = "";
     }
     if(localStorage.getItem('note') != null && loadCounter < 1) {

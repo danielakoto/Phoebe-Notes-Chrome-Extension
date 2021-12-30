@@ -144,18 +144,6 @@ a:hover {
     transition: background-color 0.3s;
 }
 
-.settings-span {
-    background-color: white;
-    visibility: hidden;
-    position: absolute;
-    top: 2%;
-    left: 90%;
-}
-.clear-span {
-    background-color: white;
-    visibility: hidden;
-}
-
 #clear:hover, #settings:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.247);
