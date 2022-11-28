@@ -4,7 +4,6 @@ Download Here: https://chrome.google.com/webstore/detail/phoebe-notes/hoikdhcpdl
 
 Donate: 
 Patreon: https://www.patreon.com/sulce?fan_landing=true
-CashApp: $ULT4N
 
 ![img1](https://user-images.githubusercontent.com/67698238/145685557-f2117562-5724-42fa-ad1a-6ac04a8c6fd0.jpg)
 ![img4](https://user-images.githubusercontent.com/67698238/145685558-a887dde1-c237-4a91-aa45-84b590d8f276.jpg)
