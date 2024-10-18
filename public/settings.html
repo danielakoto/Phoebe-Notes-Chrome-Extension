@@ -8,19 +8,18 @@
     <link rel="shortcut icon" type="image/jpg" href="img/pnLogo.png">
     <title>Phoebe Notes</title>
 </head>
-    <body>
-        <div id="circle" class="circle"></div>
-        <center><a href="index.html"><h4 class="phoebe-header">Phoebe Notes</h4></a></center>
-        <img src="img/icons8-close-48.png" id="closeExt" class="closeExt">
-        <br>
-        <br>
-        <br>
-        <br>
-        <section id="section">
-            <center> 
-            <div style="background-color: rgba(255, 255, 255, 0.267); display: inline-block; padding:20px; border-radius: 10px;">
-                <h4>Color Scheme</h4>
-                <ul style="display: grid; grid-template-columns: repeat(auto-fill, 100px); max-width: 210px; justify-content: center;">
+    <body id="bg" class="bg">
+        <div id="phoebe-header">
+            <a href="index.html"><h4>Phoebe Notes</h4></a>
+            <div>
+                <a href="index.html"><img id="back" src="img/icons8-left-50.png" alt=""></a>
+                <img alt="close-button" src="img/icons8-close-48.png" id="closeExt" class="closeExt">
+            </div>
+        </div>
+        <section id="section" style="padding: 8px; border-radius: 7px;">
+            <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; padding: 8px; background-color: rgba(0, 0, 0, 0.822); border-radius: 7px;">
+                <h4>Quick Color Scheme</h4>
+                <ul style="display: flex; flex-wrap: wrap;">
                     <li>
                         <button id="blue" class="colorbtn">blue</button>
                     </li>
@@ -46,39 +45,28 @@
                         <button id="light" class="colorbtn">light</button>
                     </li>
                 </ul>
-            <div>
-                <br>
-                <h4>Advanced Color Scheme</h4>
-                <input class="thebgcolor" type="text" maxlength="6" id="thebgcolor" placeholder="background-color-hex" style="font-size: 10px; height: 25px;" required><br>
-                <input class="thebtncolor" type="text" maxlength="6" id="thebtncolor" placeholder="button-color-hex" style="font-size: 10px; height: 25px;" required><br>
-                <button id="coloraddbtn" class="coloraddbtn">+</button>
-            </div>
-            <br>
-            <br>
-            
-                <h4>by: Daniel Akoto (sulce)</h4>
-                <div style="padding-top: 15px; padding-bottom: 15px; width: 200px;">
-                    <a href="https://www.patreon.com/sulce?fan_landing=true" target="_blank"><p class="donate" style="margin-bottom: 3px;">Donate: Patreon</p></a>
-                    <a href="https://cash.app/" target="_blank"> <p class="donate">CashApp: $ULT4N</p></a>
+                <div style="padding: 8px;">
+                    <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; margin-bottom: 8px;">
+                        <h4>Advanced Color Scheme</h4>
+                    </div>
+                    <div style="display: flex;">
+                        <input class="thebgcolor" type="text" maxlength="6" id="thebgcolor" placeholder="Background HEX Value" style="font-size: 10px; height: 25px;" required>
+                        <input class="thebtncolor" type="text" maxlength="6" id="thebtncolor" placeholder="Button HEX Value" style="font-size: 10px; height: 25px;" required>
+                        <button id="coloraddbtn" class="coloraddbtn">+</button>
+                    </div>
                 </div>
-                
-                
-
             </div>
-            <a id="back" href="index.html"><img id="back" src="img/icons8-left-50.png" alt=""></a>
-            <br>
+
             <div hidden>
-                <input class="thetitle" type="text" id="thetitle" placeholder="Title" required>
-                <textarea class="thenote" type="text" id="thenote" placeholder="Note..." required></textarea>
+                <input class="note-title" type="text" id="note-title" placeholder="Title" required>
+                <textarea class="note-content" type="text" id="note-content" placeholder="Note..." required></textarea>
                 <img src="img/icons8-close-50.png" id="cbtn" class="cbtn">
                 <button id="createThing" class="btn btn-success">+</button>
 
-                <ul id="notesList" style="display: grid; grid-template-columns: repeat(auto-fill, 300px); max-width: 300px; justify-content: center;">
-                </ul>
+                <ul id="notesList" class="notesList"></ul>
                 
                 <button id="clear" style="display:none;">clear</button>
             </div>
-        </center>
         </section>
         <script defer src="app.js"></script>
     </body>

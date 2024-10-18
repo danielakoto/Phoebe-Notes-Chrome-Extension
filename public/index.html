@@ -8,26 +8,25 @@
     <link rel="shortcut icon" type="image/jpg" href="img/pnLogo.png">
     <title>Phoebe Notes</title>
 </head>
-    <body>
-        <div id="circle" class="circle"></div>
-        <center><a href="index.html"><h4 class="phoebe-header">Phoebe Notes</h4></a></center>
-        <img src="img/icons8-close-48.png" id="closeExt" class="closeExt">
-        <section id="section" >
-            <center>
-                <input class="thetitle" type="text" maxlength="38" id="thetitle" placeholder="Title" required>
-                <textarea class="thenote" type="text" id="thenote" placeholder="Note..." autocomplete="on" required></textarea>
-                <img src="img/icons8-close-50.png" id="cbtn" class="cbtn">
-                <button id="createThing" class="btn btn-success">+</button>
+    <body id="bg" class="bg">
+        <div id="phoebe-header">
+            <a href="index.html"><h4>Phoebe Notes</h4></a>
+            <div>
+                <img alt="delete-button" src="img/icons8-delete-48.png" id="clear">
+                <a href="settings.html"><img id="settings" src="img/icons8-settings-64.png" alt=""></a>
+                <img alt="close-button" src="img/icons8-close-48.png" id="closeExt" class="closeExt">
+            </div>
+        </div>
 
-                <ul id="notesList" style="display: grid; grid-template-columns: repeat(auto-fill, 424px); max-width: 350px; margin-top: 20px "></ul>
-                
-                <img src="img/icons8-delete-48.png" id="clear" style="position: fixed; left: 85%; top: 1.6%;">
-                <br>
-                <a href="settings.html"><img id="settings" style="position: fixed; left: 90%; top: 1.6%;" src="img/icons8-settings-64.png" alt=""></a>
-                <br>
-                <br>
-            </center>
-            </section>
+        <section id="section">
+            <div style="padding:8px;position: relative;display: flex;flex-direction: column;">
+                <input id="note-title" class="note-title" type="text" maxlength="38" placeholder="Title" required>
+                <textarea class="note-content" type="text" id="note-content" placeholder="Note..." autocomplete="on" required></textarea>
+                <img alt="close-button" src="img/icons8-close-48.png" id="cbtn" class="cbtn">
+                <button id="createThing" class="btn btn-success">+</button>
+            </div>
+            <ul id="notesList" class="notesList"></ul>
+        </section>
         <div hidden>
             <h4>Color Scheme</h4>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, 100px); max-width: 200px;">

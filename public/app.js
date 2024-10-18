@@ -2,14 +2,14 @@
 const createThing = document.getElementById('createThing');
 const notesList = document.getElementById('notesList');
 const clear = document.getElementById('clear');
-const thetitle = document.getElementById('thetitle');
-const thenote = document.getElementById('thenote');
+const noteTitle = document.getElementById('note-title');
+const noteContent = document.getElementById("note-content");
 const section = document.getElementById('section');
 const cbtn = document.getElementById('cbtn');
-let circle = document.getElementById("circle");
+let bg = document.getElementById("bg");
 
-let t = document.getElementById('thetitle').value;
-let n = document.getElementById('thenote').value;
+let t = document.getElementById('note-title').value;
+let n = document.getElementById("note-content").value;
 
 let loadCounter = 0;
 let notes = [];
@@ -27,7 +27,7 @@ if(localStorage.getItem("bgcolor") == null)
 if(localStorage.getItem("btncolor") == null)
     localStorage.setItem("btncolor", btncolor);
 
-circle.style.backgroundColor = localStorage.getItem("bgcolor");
+bg.style.backgroundColor = localStorage.getItem("bgcolor");
 createThing.style.backgroundColor = localStorage.getItem("btncolor");
 
 //check local storage for recent title and note
@@ -56,8 +56,8 @@ cbtn.onclick = () => {
     if(confirm("Clear notepad?") == false)
         return;
     else {
-        thetitle.value = "";
-        thenote.value = "";
+        noteTitle.value = "";
+        noteContent.value = "";
         localStorage.setItem("title", null);
         localStorage.setItem("note", null);
         cbtn.style.display = 'none';
@@ -66,20 +66,22 @@ cbtn.onclick = () => {
 
 //When create button is clicked
 createThing.onclick = () => {
-    let thetitle = document.getElementById('thetitle');
-    let thenote = document.getElementById('thenote');
+    let noteTitle = document.getElementById('note-title');
+    let noteContent = document.getElementById("note-content");
 
-    if(thetitle.value.length == 0 && thenote.value.length == 0) {
+    if(noteTitle.value.length == 0 && noteContent.value.length == 0) {
         alert("Empty note!");
         return;
     }
     if(parseInt(createThing.innerHTML.length) == 4)
         createThing.innerHTML = "+";
+
     let note = { //initialize new note
         time: Date.now(),
-        title: document.getElementById('thetitle').value,
-        note: document.getElementById('thenote').value
+        title: document.getElementById('note-title').value,
+        note: document.getElementById("note-content").value
     }
+
     notes = JSON.parse(localStorage.getItem("NotesList")); // recover original list
     if(notes == null) // check if the list is null
         notes = [];
@@ -88,8 +90,8 @@ createThing.onclick = () => {
     localStorage.setItem("NotesList", JSON.stringify(notes)); // Save notes back to local storage
     
     // Clear title, note, and notes list
-    thetitle.value = "";
-    thenote.value = "";
+    noteTitle.value = "";
+    noteContent.value = "";
     notesList.innerHTML = "";
     // Then bring new version of notes
     allStorage();
@@ -103,18 +105,18 @@ section.addEventListener("mousemove", async function() {
         let d = [];
         e[i] = (document.getElementById(i));
             e[i].onclick = () => {
-                let thetitle = document.getElementById('thetitle');
-                let thenote = document.getElementById('thenote');
-                if(thetitle.value.length > 0 || thenote.value.length > 0) {
+                let noteTitle = document.getElementById('note-title');
+                let noteContent = document.getElementById("note-content");
+                if(noteTitle.value.length > 0 || noteContent.value.length > 0) {
                     createThing.click();
-                    thetitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
-                    thenote.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
+                    noteTitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
+                    noteContent.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
                     window.scrollTo(0, 0);
                     del(i);
                     return;
                 } else {
-                    thetitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
-                    thenote.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
+                    noteTitle.value = JSON.parse(localStorage.getItem('NotesList'))[i].title;
+                    noteContent.value = JSON.parse(localStorage.getItem('NotesList'))[i].note;
                     window.scrollTo(0, 0);
                     del(i);
                     return;
@@ -181,20 +183,20 @@ function allStorage() {
     }
 
     if(localStorage.getItem('title') != null && loadCounter < 1) {
-        const thetitle = document.getElementById('thetitle');
-        thetitle.value = JSON.parse(localStorage.getItem('title'));
+        const noteTitle = document.getElementById('note-title');
+        noteTitle.value = JSON.parse(localStorage.getItem('title'));
     } else {
-        const thetitle = document.getElementById('thetitle');
+        const noteTitle = document.getElementById('note-title');
         localStorage.removeItem("title");
-        thetitle.value = "";
+        noteTitle.value = "";
     }
     if(localStorage.getItem('note') != null && loadCounter < 1) {
-        const thenote = document.getElementById('thenote');
-        thenote.value = JSON.parse(localStorage.getItem('note'));
+        const noteContent = document.getElementById("note-content");
+        noteContent.value = JSON.parse(localStorage.getItem('note'));
     } else {
-        const thenote = document.getElementById('thenote');
+        const noteContent = document.getElementById("note-content");
         localStorage.removeItem("note");
-        thenote.value = "";
+        noteContent.value = "";
     }
 
     checkbtn();
@@ -209,13 +211,15 @@ function allStorageNoClear() {
             let n = JSON.parse(localStorage.getItem('NotesList'))[i].note;
             let tm = JSON.parse(localStorage.getItem('NotesList'))[i].time;
             notesList.innerHTML = notesList.innerHTML + `          
-                                    <li class="card" style="padding:10px; border-radius:5px; align-text:left;">
-                                    <a id="${i}">    
-                                        <p id="vtitle">${t}</p>
-                                        <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
-                                        <img src="img/icons8-edit-48.png" id="${i}" class="ebtn">
-                                    </a>
-                                    <img src="img/icons8-close-50.png" id="${i+100}" class="xbtn">
+                                    <li class="card">
+                                        <a id="${i}">    
+                                            <p id="vtitle">${t}</p>
+                                            <p id="vvalue" style="text-align:left; resize:none;">${n}</p>
+                                        </a>
+                                        <div>
+                                            <img src="img/icons8-edit-48.png" id="${i}" class="ebtn">
+                                            <img src="img/icons8-close-50.png" id="${i+100}" class="xbtn">
+                                        </div>
                                     </li>
                                 `
         }
@@ -277,7 +281,7 @@ purple.onclick = () => {
 //DARK
 const dark = document.getElementById("dark");
 dark.onclick = () => {
-    bgcolor = "#404040";
+    bgcolor = "#050505";
     btncolor = "#000000";
     changeColor();
 }
@@ -301,7 +305,7 @@ coloraddbtn.onclick = () => {
 }
 
 function checkbtn() {
-    if(thetitle.value.length != 0 || thenote.value.length != 0)
+    if(noteTitle.value.length != 0 || noteContent.value.length != 0)
         cbtn.style.display = "inline-block";
     else
         cbtn.style.display = "none";
@@ -313,24 +317,24 @@ function checkbtn() {
 
 function checkFields() {
     if(JSON.parse(localStorage.getItem('title')).length != null && loadCounter < 1) {
-        const thetitle = document.getElementById('thetitle');
-        thetitle.value = JSON.parse(localStorage.getItem('title'));
+        const noteTitle = document.getElementById('note-title');
+        noteTitle.value = JSON.parse(localStorage.getItem('title'));
     }
     if(JSON.parse(localStorage.getItem('note')).length != null && loadCounter < 1) {
-        const thenote = document.getElementById('thenote');
-        thenote.value = JSON.parse(localStorage.getItem('note'));
+        const noteContent = document.getElementById("note-content");
+        noteContent.value = JSON.parse(localStorage.getItem('note'));
     }
 }
 
 function checkLS() {
-    let t = document.getElementById('thetitle').value;
+    let t = document.getElementById('note-title').value;
     localStorage.setItem("title", JSON.stringify(t));
-    let n = document.getElementById('thenote').value;
+    let n = document.getElementById("note-content").value;
     localStorage.setItem("note", JSON.stringify(n));
 }
 
 function changeColor() {
-    circle.style.backgroundColor = bgcolor;
+    bg.style.backgroundColor = bgcolor;
     createThing.style.backgroundColor = btncolor;
     localStorage.setItem("bgcolor", bgcolor)
     localStorage.setItem("btncolor", btncolor);

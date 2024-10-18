@@ -2,6 +2,11 @@
     margin: 0;
     display: flexbox;
     font-family: Arial, Helvetica, sans-serif;
+    ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -16,37 +21,55 @@ body {
     background-color: rgb(41, 41, 41);
 }
 
-.phoebe-header {
+#phoebe-header {
     background-color: rgba(0, 0, 0, 0.822); 
-    color: white; 
-    padding-top: 10px; 
-    padding-bottom: 10px; 
     font-size: 16px; 
-    width: 500px; 
-    margin-bottom: 5px; 
-    position: fixed;
+    position: sticky;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 7px;
+    margin: 8px 8px 0px;
+    top: 0px;
+    z-index: 1;
 }
 
+#phoebe-header a h4 {
+    color: white;
+    font-size: 16px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
 ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-    padding: 0px;
     justify-content: center;
+    gap: 8px;
+    padding: 8px;
 }
 
 li {
-    background-color: rgba(255, 255, 255, 0.801);
+    background-color: rgba(0, 0, 0, 0.822); 
     font-family: Arial, Helvetica, sans-serif; 
     border: solid rgba(124, 124, 124, 0.205) 0.5px; 
     animation: fadeIn 800ms;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+}
+
+.notesList li {
+    width: 130px;
+    height: 130px;
 }
 
 li:hover {
-    transition: background-color 0.3s;
-    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(210, 210, 214, 0.25) 0px 6px 12px -2px, rgba(163, 163, 163, 0.3) 0px 3px 7px -3px;
 }
 
 #vtitle {
@@ -54,8 +77,7 @@ li:hover {
     font-weight: bold;
     font-size: 14px;
     text-align: center;
-    margin: 0 0 1% 0;
-    padding: 10px;
+    padding: 8px;
 }
 #vvalue {
     font-family: Arial, Helvetica, sans-serif;
@@ -70,14 +92,14 @@ h4 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: white;
     word-break: break-word;
-    white-space: pre-wrap;;
+    white-space: pre-wrap;
 }
 
 a:hover {
@@ -89,49 +111,53 @@ a:hover {
     margin-bottom: 3px;
 }
 
-.thetitle, .thenote {
+.note-title, .note-content {
     margin: 0; 
     border: none;
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.822); 
+    color: white;
 }
-.thetitle {
-    margin-top: 67px;
-    width: 394px;
+.note-title {
     height: 35px;
     font-weight: bold;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
-.thenote {
-    width: 394px;
-    height: 200px;
+.note-content {
+    min-height: 50px;
+    height: 150px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
-.thetitle:hover, .thenote:hover {
-    color: black;
+.note-title:hover, .note-content:hover {
+    color: white;
 }
 
-.thetitle:focus, .thenote:focus {
+.note-title:focus, .note-content:focus {
     outline: none;
 }
 
 #createThing {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     margin-bottom: 1px; 
-    height: 40px; 
-    width: 424px;
+    height: 40px;
+    width: 40px;
     background-color: #ffcc53;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-radius: 8px;
     color: white;
     font-size: 20px;
     border: solid 1px rgba(0, 0, 0, 0.089);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: all 0.3s;
 }
 #createThing:hover {
     cursor: pointer;
+    box-shadow: rgba(114, 114, 117, 0.25) 0px 6px 12px -2px, rgba(74, 74, 74, 0.3) 0px 3px 7px -3px;
 }
 
 #clear, #settings {
@@ -147,20 +173,6 @@ a:hover {
 #clear:hover, #settings:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.247);
-    transition: background-color 0.3s;
-}
-
-.circle {
-    z-index: -1;
-    position: fixed;
-    background-color: #fffaee;
-    padding: 240px;
-    margin: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 68px;
-    width: 22px;
 }
 
 input {
@@ -173,21 +185,6 @@ input {
     left: 90%;
     width: 60px;
     height: 60px;
-}
-
-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: rgb(0, 0, 0);
-    outline: none;
-    border-radius: 4px;
-}
-
-body::-webkit-scrollbar-track-piece {
-    background-color: rgb(41, 41, 41);
-    border-radius: 4px;
 }
 
 textarea {
@@ -211,7 +208,7 @@ a {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 a:hover {
@@ -243,13 +240,11 @@ a:hover {
 }
 
 .ebtn:hover {
-    background-color: rgba(0, 0, 0, 0.082);
-    transition: background-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 .xbtn:hover {
-    background-color: rgba(0, 0, 0, 0.082);
-    transition: background-color 0.3s; 
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 button:hover {
@@ -261,6 +256,8 @@ button:hover {
     border: none;
     width: 100px;
     margin: 0;
+    color: white;
+    padding: 16px;
 }
 
 #red:hover {
@@ -284,7 +281,7 @@ button:hover {
     background-color: #af59ff;
 }
 #dark:hover {
-    background-color: rgb(37, 37, 37);
+    background-color: #050505;
 }
 #light:hover{
     background-color: white;
@@ -293,18 +290,13 @@ button:hover {
 .coloraddbtn {
     background-color: rgba(255, 255, 255, 0.336);
     border: none;
-    margin-top: 3px;
-    width: 20px;
 }
 
-.thebgcolor {
-    margin-top: 10px;
-}
+
 .thebtncolor, .thebgcolor {
-    width: 200px;
-    border: solid 1px rgba(0, 0, 0, 0.192);
-    background-color: rgba(255, 255, 255, 0.616);
-    color: black;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.822); 
+    color: white;
 }
 .thebgcolor:focus, .thebtncolor:focus {
     outline: none;
@@ -316,35 +308,35 @@ button:hover {
     border-radius: 20%;
     width: 20px;
     height: 20px;
-    position: fixed;
-    left: 2%;
-    top: 1.6%;
     background-color: transparent;
     transition: background-color 0.3s;
 }
 #back:hover {
     background-color: rgba(255, 255, 255, 0.247);
-    transition: background-color 0.3s;
 }
 
 #section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     animation: fadeIn 400ms;
 }
 
 .cbtn {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
     position: absolute;
-    top: 14%;
-    left: 88%;
+    bottom: 16px;
+    left: 16px;
     display: none;
-    background-color: rgba(255, 255, 255, 0.205);
     padding: 2px;
     border-radius: 20%;
+    background-color: transparent;
+    transition: background-color 0.3s;
 }
 .cbtn:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.247);
 }
 
 .closeExt {
@@ -352,16 +344,12 @@ button:hover {
     width: 16px;
     height: 16px;
     cursor: pointer;
-    position: fixed;
-    top: 1.6%;
-    left: 95%;
     padding: 2px;
     border-radius: 20%;
     transition: background-color 0.3s;
 }
 .closeExt:hover {
     background-color: rgba(255, 255, 255, 0.247);
-    transition: background-color 0.3s;
 }
 
 .donate {
@@ -378,6 +366,8 @@ button:hover {
 
 .card {
     margin-bottom: 4px;
+    padding:10px; 
+    border-radius:5px; 
 }
 
 /* ANIMATIONS */
